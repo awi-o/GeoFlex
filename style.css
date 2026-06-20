@@ -208,3 +208,9 @@ input {
     bottom: 20px;
     right: 20px;
 }
+.flash-correct{
+    filter: brightness(1.4) sepia(1) hue-rotate(80deg);
+}
+.flash-wrong{
+    filter: brightness(1.4) sepia(1) hue-rotate(-50deg);
+}
