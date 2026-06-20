@@ -73,6 +73,7 @@ const questions = [
 ];
 const soundCorrect = new Audio("sounds/default-corr.mp3");
 const soundWrong = new Audio("sounds/wrong.mp3");
+const soundWin = new Audio("sounds/win.mp3");
 let current = 0;
 let score = 0;
 let locked = false;
@@ -145,6 +146,7 @@ document.getElementById("submitBtn").addEventListener("click", () => {
 
         if (current >= questions.length) {
             showResults();
+            soundWin.play();
         } else {
             loadQuestion();
 
