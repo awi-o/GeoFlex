@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoFlex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="menu">
+
+        <img src="assets/logo.png" alt="GeoFlex" class="logo">
+
+        <div class="buttons">
+            <button id="playBtn">Jogar</button>
+            <button id="settingsBtn">Configurações</button>
+	    <button id="changelogBtn">Changelog</button>
+            <button id="creditsBtn">Créditos</button>
+            <button id="exitBtn">Sair</button>
+        </div>
+
+	<div class="game-screen" style="display:none;">
+	    <p id="questionCounter"></p>
+    	    <img id="flagImg" class="flag" src="" />
+    	    <input id="answerInput" type="text" placeholder="Digite o país..." />
+    	    <button id="submitBtn">Confirmar</button>
+    	    <p id="feedback"></p>
+	</div>
+
+        <div class="credits" style="display:none;">
+    	    <h1>GeoFlex</h1>
+    	    <p>Criado por Awi</p>
+
+    	    <p>Alguns direitos reservados - 2026</p>
+
+    	    <p>Só avisando que por favor dê aviso prévio se for remixar o jogo, e</p>
+    	    <p>eu não permito copiar o jogo com más intenções.😉</p>
+
+    	    <h2>Sobre o criador</h2>
+    	    <p>Eu sou brasileiro e meu nome real não é awi, mas você pode me chamar assim</p>
+	    <p>Comecei a desenvolver esse jogo dia 17/06/2026 mais ou menos umas 15:32:48 da tarde</p>
+    	    <br>
+    	    <button id="backCredits">Voltar</button>
+	</div>
+	<div class="settings" style="display:none;">
+    	    <h1>Configurações</h1>
+
+    	    <p>Som: (em breve)</p>
+    	    <p>Gráficos: (em breve)</p>
+    	    <p>Idioma: Português</p>
+
+    	    <br>
+    	    <button id="backSettings">Voltar</button>
+	</div>
+	
+	<div class="changelog" style="display:none;">
+
+    <h1>Changelog</h1>
+
+    <p>2026-06-17 ~15:00 UTC-3 - GeoFlex v0.0.1</p>
+    <p>• Tela inicial</p>
+    <p>• Créditos</p>
+    <p>• Configurações (placeholder)</p>
+
+    <br>
+
+    <p>2026-06-18 - GeoFlex v0.1.0</p>
+    <p>• Primeiro minigame: Acerte o País</p>
+
+    <br>
+
+    <p>2026-06-18 ~22:00 UTC-3 - GeoFlex v0.1.1</p>
+    <p>• Correções de bugs menores</p>
+
+    <br>
+	
+    <p>2026-06-19 20:31 UTC-3 - GeoFlex v0.2.0</p>
+    <p>• Embaralhamento de perguntas</p>
+    <p>• Exibição da pergunta atual</p>
+
+    <br>
+
+    <p>2026-06-19 22:00 UTC-3 - GeoFlex v0.2.1</p>
+    <p>• Changelog</p>
+
+    <br>
+
+    <p>2026-06-19 22:29 UTC-3 - GeoFlex v0.2.2</p>
+    <p>• Melhor centralização dos botões e objetos no menu</p>
+
+    <br>
+
+    <button id="backChangelog">Voltar</button>
+
+</div>
+	
+	<div class="game-menu" style="display:none;">
+
+    	<h1>Jogos</h1>
+
+    	<div class="games-list">
+
+        	<!-- JOGO 1 -->
+        	<div class="game-card">
+            	<img src="assets/tmb_game1.png" alt="Acerte o País">
+
+            	<h2>Acerte o País</h2>
+
+            	<button id="playGameBtn">Jogar</button>
+            	<button class="rateBtn">Avaliar</button>
+        	</div>
+
+       		 <!-- EM BREVE -->
+       	 	<div class="game-card coming">
+           	<h2>Mais em breve</h2>
+        	</div>
+
+        	<div class="game-card coming">
+            	<h2>Mais em breve</h2>
+        	</div>
+
+    	</div>
+
+    	<br>
+    	<button id="backMenuBtn">Voltar</button>
+
+	</div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

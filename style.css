@@ -1,0 +1,198 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+img {
+    display: block;
+}
+
+body{
+    background: #000619;
+    margin:0;
+    padding:0
+    height:100vh;
+    overflow:hidden;
+    display: flex;
+    justify-content:center;
+    align-items:flex-start;
+}
+
+.menu{
+    text-align:center;
+    color: white;
+    width:100%
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top:10px;
+}
+
+.logo{
+    width:320px;
+    max-width:80vw;
+    margin-bottom:10px;
+}
+
+.buttons{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+button{
+    width:260px;
+    padding:15px;
+    margin: 0;
+    border:none;
+    border-radius:12px;
+
+    background:#2563eb;
+    color:white;
+
+    font-size:18px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.2s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    background:#3b82f6;
+}
+
+button:active{
+    transform:scale(0.98);
+}
+
+.credits {
+    text-align: center;
+    color: white;
+    display: none;
+}
+
+.credits h1 {
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.credits p {
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.credits button {
+    margin-top: 15px;
+}
+
+.game-menu {
+    text-align: center;
+    color: white;
+}
+
+.games-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    max-height: 60vh;
+    overflow-y: auto;
+
+    padding: 10px;
+}
+
+.game-card {
+    background: #111827;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.game-card img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+}
+
+.coming {
+    opacity: 0.5;
+}
+
+.game-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #000619;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 40px;
+}
+
+.game-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.flag {
+    width: 220px;
+    height: auto;
+    border-radius: 10px;
+}
+
+input {
+    padding: 10px;
+    width: 220px;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+}
+
+.game-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #000619;
+
+    display: none;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.changelog {
+    display: none;
+
+    color: white;
+    text-align: center;
+
+    width: 90vw;
+    max-width: 700px;
+
+    max-height: 80vh;
+    overflow-y: auto;
+
+    padding: 20px;
+}
