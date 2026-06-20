@@ -153,6 +153,7 @@ button:active{
     width: 220px;
     height: auto;
     border-radius: 10px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 input {
