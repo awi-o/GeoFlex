@@ -58,7 +58,7 @@ document.getElementById("backMenuBtn").addEventListener("click", () => {
     document.querySelector(".logo").style.display = "block";
     document.querySelector(".buttons").style.display = "flex";
 });
-
+// variaveis
 const questions = [
     { image: "assets/flags/brazil.png", answer: "Brasil" },
     { image: "assets/flags/france.png", answer: "França" },
@@ -71,7 +71,8 @@ const questions = [
     { image: "assets/flags/south-africa.png", answer: "África do Sul" },
     { image: "assets/flags/saudi-arabia.png", answer: "Arábia Saudita" }
 ];
-
+const soundCorrect = new Audio("sounds/default-corr.mp3");
+const soundWrong = new Audio("sounds/wrong.mp3");
 let current = 0;
 let score = 0;
 let locked = false;
@@ -126,20 +127,44 @@ document.getElementById("submitBtn").addEventListener("click", () => {
     if (normalize(input) === normalize(correct)) {
         score++;
         document.getElementById("feedback").textContent = "✔ Certo!";
+        soundCorrect.play();
+        
     } else {
         document.getElementById("feedback").textContent = "❌ Errado! Era: " + correct;
+        soundWrong.play();
     }
 
     setTimeout(() => {
+
+    flagImg.style.transform = "translateX(-100px)";
+    flagImg.style.opacity = "0";
+
+    setTimeout(() => {
+
         current++;
-        
+
         if (current >= questions.length) {
             showResults();
         } else {
             loadQuestion();
+
+            flagImg.style.transform = "translateX(100px)";
+            flagImg.style.opacity = "0";
+
+            setTimeout(() => {
+                flagImg.style.transform = "translateX(0)";
+                flagImg.style.opacity = "1";
+            }, 50);
         }
+
         locked = false;
-    }, 800);
+
+    }, 150);
+
+}, 800);
+    setTimeout(() => {
+    flagImg.classList.remove("flash-correct", "flash-wrong");
+}, 150);
 });
 
 function showResults() {
