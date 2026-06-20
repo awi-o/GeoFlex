@@ -19,7 +19,7 @@ document.getElementById("changelogBtn").addEventListener("click", () => {
 });
 
 document.getElementById("backChangelog").addEventListener("click", () => {
-    document.querySelector(".changelog").style.display = "none";
+    document.querySelector(".changelog").style.display = "flex";
     document.querySelector(".buttons").style.display = "flex";
 });
 
@@ -74,6 +74,7 @@ const questions = [
 
 let current = 0;
 let score = 0;
+let locked = false;
 
 function normalize(text) {
     return text.toLowerCase()
@@ -117,6 +118,8 @@ document.getElementById("playBtn").addEventListener("click", () => {
 });
 
 document.getElementById("submitBtn").addEventListener("click", () => {
+    if (locked) return;
+    locked = true;
     const input = document.getElementById("answerInput").value;
     const correct = questions[current].answer;
 
@@ -129,12 +132,13 @@ document.getElementById("submitBtn").addEventListener("click", () => {
 
     setTimeout(() => {
         current++;
-
+        
         if (current >= questions.length) {
             showResults();
         } else {
             loadQuestion();
         }
+        locked = false;
     }, 800);
 });
 
@@ -156,6 +160,7 @@ function showResults() {
 
 document.getElementById("answerInput").addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
+        event.preventDefault();
         document.getElementById("submitBtn").click();
     }
 });
