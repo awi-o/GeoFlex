@@ -181,14 +181,30 @@ input {
 
     gap: 15px;
 }
-
 .changelog {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     color: white;
-    text-align: center;
-    width: 90vw;
-    max-width: 700px;
-    max-height: 80vh;
-    overflow-y: auto;
-    padding: 20px;
+}
+.changelog h1,
+.changelog p {
+    text-align: left;
+    margin-left: 40px;
+}
+.changelog img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 80px;
+}
+#backChangelog {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
