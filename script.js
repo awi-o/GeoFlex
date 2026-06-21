@@ -188,7 +188,7 @@ function showResults() {
         <button id="menuBtn">Voltar ao menu</button>
     `;
 
-    document.getElementById("restartBtn").onclick = () => location.reload();
+    document.getElementById("restartBtn").onclick = () => startGame();
 
     document.getElementById("menuBtn").onclick = () => {
         location.reload();
