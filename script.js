@@ -19,7 +19,7 @@ document.getElementById("changelogBtn").addEventListener("click", () => {
 });
 
 document.getElementById("backChangelog").addEventListener("click", () => {
-    document.querySelector(".changelog").style.display = "flex";
+    document.querySelector(".changelog").style.display = "none";
     document.querySelector(".buttons").style.display = "flex";
 });
 
