@@ -69,7 +69,15 @@ const questions = [
     { image: "assets/flags/chile.png", answer: "Chile" },
     { image: "assets/flags/uk.png", answer: "Reino Unido" },
     { image: "assets/flags/south-africa.png", answer: "África do Sul" },
-    { image: "assets/flags/saudi-arabia.png", answer: "Arábia Saudita" }
+    { image: "assets/flags/saudi-arabia.png", answer: "Arábia Saudita" },
+    { image: "assets/flags/tunisia.png", answer: "Tunísia" },
+    { image: "assets/flags/japan.png", answer: "Japão" },
+    { image: "assets/flags/belgium.png", answer: "Bélgica" },
+    { image: "assets/flags/iran.png", answer: "Irã" },
+    { image: "assets/flags/uruguay.png", answer: "Uruguai" },
+    { image: "assets/flags/cape-verde.png", answer: "Cabo Verde" },
+    { image: "assets/flags/new-zealand.png", answer: "Nova Zelândia" },
+    { image: "assets/flags/egypt.png", answer: "Egito" },
 ];
 const soundCorrect = new Audio("sounds/default-corr.mp3");
 const soundWrong = new Audio("sounds/wrong.mp3");
