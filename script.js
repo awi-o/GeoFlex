@@ -86,6 +86,16 @@ let current = 0;
 let score = 0;
 let locked = false;
 
+function goToMenu() {
+    document.querySelector(".game-screen").style.display = "none";
+    document.querySelector(".game-menu").style.display = "none";
+    document.querySelector(".credits").style.display = "none";
+    document.querySelector(".settings").style.display = "none";
+
+    document.querySelector(".buttons").style.display = "flex";
+    document.querySelector(".logo").style.display = "block";
+}
+
 function normalize(text) {
     return text.toLowerCase()
         .normalize("NFD")
@@ -189,10 +199,7 @@ function showResults() {
     `;
 
     document.getElementById("restartBtn").onclick = () => startGame();
-
-    document.getElementById("menuBtn").onclick = () => {
-        location.reload();
-    };
+    document.getElementById("menuBtn").onclick = () => goToMenu();
 }
 
 document.getElementById("answerInput").addEventListener("keydown", (event) => {
