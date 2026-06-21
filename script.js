@@ -1,63 +1,3 @@
-
-// ⚙️ configs
-
-    document.getElementById("settingsBtn").addEventListener("click", () => {
-    document.querySelector(".buttons").style.display = "none";
-    document.querySelector(".settings").style.display = "block";
-});
-
-document.getElementById("backSettings").addEventListener("click", () => {
-    document.querySelector(".settings").style.display = "none";
-    document.querySelector(".buttons").style.display = "flex";
-});
-
-// 📜 changelog
-
-document.getElementById("changelogBtn").addEventListener("click", () => {
-    document.querySelector(".buttons").style.display = "none";
-    document.querySelector(".changelog").style.display = "block";
-});
-
-document.getElementById("backChangelog").addEventListener("click", () => {
-    document.querySelector(".changelog").style.display = "none";
-    document.querySelector(".buttons").style.display = "flex";
-});
-
-// 📜créditos
-document.getElementById("creditsBtn").addEventListener("click", () => {
-    document.querySelector(".buttons").style.display = "none";
-    document.querySelector(".credits").style.display = "block";
-});
-
-document.getElementById("backCredits").addEventListener("click", () => {
-    document.querySelector(".credits").style.display = "none";
-    document.querySelector(".buttons").style.display = "flex";
-});
-
-
-document.getElementById("exitBtn").addEventListener("click", () => {
-    const confirmExit = confirm("Tem certeza que deseja sair do GeoFlex?");
-
-    if (confirmExit) {
-        window.open('', '_self', '');
-        window.close();
-
-        document.body.innerHTML = "<h1>Você saiu do jogo</h1>";
-    }
-});
-
-// ▶ jogar
-document.getElementById("playBtn").addEventListener("click", () => {
-    document.querySelector(".buttons").style.display = "none";
-    document.querySelector(".logo").style.display = "none";
-    document.querySelector(".game-menu").style.display = "flex";
-});
-
-document.getElementById("backMenuBtn").addEventListener("click", () => {
-    document.querySelector(".game-menu").style.display = "none";
-    document.querySelector(".logo").style.display = "block";
-    document.querySelector(".buttons").style.display = "flex";
-});
 // variaveis
 const questions = [
     { image: "assets/flags/brazil.png", answer: "Brasil" },
@@ -86,32 +26,72 @@ let current = 0;
 let score = 0;
 let locked = false;
 
-function goToMenu() {
-    document.querySelector(".game-screen").style.display = "none";
-    document.querySelector(".game-menu").style.display = "none";
-    document.querySelector(".credits").style.display = "none";
-    document.querySelector(".settings").style.display = "none";
+//🧭 single page sistema
+const screens = {
+    menu: document.querySelector(".buttons"),
+    gameMenu: document.querySelector(".game-menu"),
+    game: document.querySelector(".game-screen"),
+    credits: document.querySelector(".credits"),
+    settings: document.querySelector(".settings"),
+    changelog: document.querySelector(".changelog"),
+    results: document.querySelector(".results")
+};
 
-    document.querySelector(".buttons").style.display = "flex";
-    document.querySelector(".logo").style.display = "block";
+function showScreen(screen) {
+    // esconde tudo
+    Object.values(screens).forEach(s => {
+        if (s) s.style.display = "none";
+    });
+
+    // mostra só a tela pedida
+    if (screens[screen]) {
+        screens[screen].style.display = "flex";
+    }
+
+    if (screen === "menu") {
+        document.querySelector(".logo").style.display = "block";
+    } else {
+        document.querySelector(".logo").style.display = "none";
+    }
 }
+// ⚙️ configs
+document.getElementById("settingsBtn").addEventListener("click", () => showScreen("settings"));
+document.getElementById("backSettings").addEventListener("click", () => showScreen("menu"));
+
+// 📜 changelog
+document.getElementById("changelogBtn").addEventListener("click", () => showScreen("changelog"));
+document.getElementById("backChangelog").addEventListener("click", () => showScreen("menu"));
+
+// 📜créditos
+document.getElementById("creditsBtn").addEventListener("click", () => showScreen("credits"));
+document.getElementById("backCredits").addEventListener("click", () => showScreen("menu"));
+
+document.getElementById("exitBtn").addEventListener("click", () => {
+    const confirmExit = confirm("Tem certeza que deseja sair do GeoFlex?");
+
+    if (confirmExit) {
+        alert("Se a aba não fechar automaticamente, você pode fechá-la manualmente 🙂");
+        window.close();
+    }
+});
+
+// ▶ jogar
+document.getElementById("playBtn").addEventListener("click", () => showScreen("gameMenu"));
+document.getElementById("backMenuBtn").addEventListener("click", () => showScreen("menu"));
 
 function normalize(text) {
     return text.toLowerCase()
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "");
 }
-
 function loadQuestion() {
     const q = questions[current];
     document.getElementById("questionCounter").textContent =
     `Pergunta ${current + 1}/${questions.length}`;
-
     document.getElementById("flagImg").src = q.image;
     document.getElementById("answerInput").value = "";
     document.getElementById("feedback").textContent = "";
 }
-
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -119,23 +99,26 @@ function shuffle(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
-
 function startGame() {
-    document.querySelector(".buttons").style.display = "none";
-    document.querySelector(".game-menu").style.display = "none";
-    document.querySelector(".logo").style.display = "none";
-    document.querySelector(".game-screen").style.display = "flex";
-
+    showScreen("game");
     current = 0;
     score = 0;
     shuffle(questions);
     loadQuestion();
 }
+function showResults() {
+    showScreen("results");
+    document.getElementById("resultText").textContent =
+        `✔ Acertos: ${score}/${questions.length}`;
+    document.getElementById("restartBtn").onclick = () => {
+        startGame();
+    };
+    document.getElementById("menuBtn").onclick = () => {
+        showScreen("menu");
+    };
+}
 
-document.getElementById("playBtn").addEventListener("click", () => {
-    document.querySelector(".buttons").style.display = "none";
-    document.querySelector(".game-menu").style.display = "flex";
-});
+document.getElementById("playBtn").addEventListener("click", () => showScreen("gameMenu"));
 
 document.getElementById("submitBtn").addEventListener("click", () => {
     if (locked) return;
@@ -156,59 +139,36 @@ document.getElementById("submitBtn").addEventListener("click", () => {
     }
 
     setTimeout(() => {
-
     flagImg.style.transform = "translateX(-100px)";
     flagImg.style.opacity = "0";
 
     setTimeout(() => {
-
         current++;
-
         if (current >= questions.length) {
             showResults();
             soundWin.play();
         } else {
             loadQuestion();
-
             flagImg.style.transform = "translateX(100px)";
             flagImg.style.opacity = "0";
-
             setTimeout(() => {
                 flagImg.style.transform = "translateX(0)";
                 flagImg.style.opacity = "1";
             }, 50);
         }
-
         locked = false;
-
     }, 150);
-
 }, 800);
     setTimeout(() => {
     flagImg.classList.remove("flash-correct", "flash-wrong");
 }, 150);
 });
-
-function showResults() {
-    document.querySelector(".game-screen").innerHTML = `
-        <h1>🏁 Resultado</h1>
-        <p>✔ Acertos: ${score}/${questions.length}</p>
-
-        <button id="restartBtn">Jogar de novo</button>
-        <button id="menuBtn">Voltar ao menu</button>
-    `;
-
-    document.getElementById("restartBtn").onclick = () => startGame();
-    document.getElementById("menuBtn").onclick = () => goToMenu();
-}
-
 document.getElementById("answerInput").addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         event.preventDefault();
         document.getElementById("submitBtn").click();
     }
 });
-
 document.getElementById("playGameBtn").addEventListener("click", () => {
     document.querySelector(".game-menu").style.display = "none";
     startGame();
