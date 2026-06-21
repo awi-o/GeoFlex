@@ -96,6 +96,16 @@ button:active{
 .game-menu {
     text-align: center;
     color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000619;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
 }
 
 .games-list {
@@ -125,30 +135,6 @@ button:active{
     opacity: 0.5;
 }
 
-.game-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100vw;
-    height: 100vh;
-
-    background: #000619;
-
-    display: none;
-    flex-direction: column;
-    align-items: center;
-
-    padding-top: 40px;
-}
-
-.game-screen {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
 .flag {
     width: 220px;
     height: auto;
@@ -168,18 +154,13 @@ input {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100vw;
     height: 100vh;
-
     background: #000619;
-
     display: none;
-
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     gap: 15px;
 }
 .changelog {
@@ -190,6 +171,8 @@ input {
     width: 100vw;
     height: 100vh;
     flex-direction: column;
+    color: white;
+    background: #000619;
     color: white;
 }
 .changelog h1,
@@ -218,18 +201,27 @@ input {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100vw;
     height: 100vh;
-
     background: #000619;
-
     display: none; /* SPA controla isso */
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
-
     color: white;
     gap: 15px;
+}
+.settings {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000619;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
