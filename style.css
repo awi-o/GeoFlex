@@ -76,7 +76,7 @@ button:active{
 .credits {
     text-align: center;
     color: white;
-    display: none;
+    display: flex;
 }
 
 .credits h1 {
