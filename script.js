@@ -69,7 +69,15 @@ const questions = [
     { image: "assets/flags/chile.png", answer: "Chile" },
     { image: "assets/flags/uk.png", answer: "Reino Unido" },
     { image: "assets/flags/south-africa.png", answer: "África do Sul" },
-    { image: "assets/flags/saudi-arabia.png", answer: "Arábia Saudita" }
+    { image: "assets/flags/saudi-arabia.png", answer: "Arábia Saudita" },
+    { image: "assets/flags/turkey.png", answer: "Turquia" },
+    { image: "assets/flags/paraguay.png", answer: "Paraguai" },
+    { image: "assets/flags/netherlands.png", answer: ["Holanda", "Países Baixos"] },
+    { image: "assets/flags/sweden.png", answer: "Suécia" },
+    { image: "assets/flags/germany.png", answer: "Alemanha" },
+    { image: "assets/flags/ivory-coast.png", answer: "Costa do Marfim" },
+    { image: "assets/flags/ecuador.png", answer: "Equador" },
+    { image: "assets/flags/curacao.png", answer: "Curaçao" }
 ];
 const soundCorrect = new Audio("sounds/default-corr.mp3");
 const soundWrong = new Audio("sounds/wrong.mp3");
@@ -125,13 +133,15 @@ document.getElementById("submitBtn").addEventListener("click", () => {
     const input = document.getElementById("answerInput").value;
     const correct = questions[current].answer;
 
-    if (normalize(input) === normalize(correct)) {
+    if (Array.isArray(correct)
+        ? correct.some(answer => normalize(input) === normalize(answer))
+        : normalize(input) === normalize(correct)) {
         score++;
         document.getElementById("feedback").textContent = "✔ Certo!";
         soundCorrect.play();
         
     } else {
-        document.getElementById("feedback").textContent = "❌ Errado! Era: " + correct;
+        document.getElementById("feedback").textContent = "❌ Errado! Era: " + (Array.isArray(correct) ? correct[0] : correct);
         soundWrong.play();
     }
 
