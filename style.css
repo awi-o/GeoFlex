@@ -214,3 +214,22 @@ input {
 .flash-wrong{
     filter: brightness(1.4) sepia(1) hue-rotate(-50deg);
 }
+.results {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #000619;
+
+    display: none; /* SPA controla isso */
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    gap: 15px;
+}
