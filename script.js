@@ -69,7 +69,7 @@ const questions = [
     { image: "assets/flags/chile.png", answer: "Chile" },
     { image: "assets/flags/uk.png", answer: "Reino Unido" },
     { image: "assets/flags/south-africa.png", answer: "África do Sul" },
-    { image: "assets/flags/saudi-arabia.png", answer: "Arábia Saudita" },
+    { image: "assets/flags/saudi-arabia.png", answer: "Arábia Saudita" }
 ];
 const soundCorrect = new Audio("sounds/default-corr.mp3");
 const soundWrong = new Audio("sounds/wrong.mp3");
