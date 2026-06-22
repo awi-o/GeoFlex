@@ -142,7 +142,6 @@ document.getElementById("submitBtn").addEventListener("click", () => {
     setTimeout(() => {
     flagImg.style.transform = "translateX(-100px)";
     flagImg.style.opacity = "0";
-
     setTimeout(() => {
         current++;
         if (current >= questions.length) {
