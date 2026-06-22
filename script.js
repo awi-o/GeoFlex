@@ -1,3 +1,4 @@
+console.log("primeira coisa");
 // variaveis
 const questions = [
     { image: "assets/flags/brazil.png", answer: "Brasil" },
