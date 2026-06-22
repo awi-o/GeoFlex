@@ -28,6 +28,7 @@ let locked = false;
 
 //🧭 single page sistema
 const screens = {
+    start: document.querySelector(".startScreen").
     menu: document.querySelector(".buttons"),
     gameMenu: document.querySelector(".game-menu"),
     game: document.querySelector(".game-screen"),
@@ -101,12 +102,15 @@ function shuffle(array) {
     }
 }
 function startGame() {
+    showScreen("start");
+}
+document.getElementById("startGameBtn").onclick = () => {
     showScreen("game");
     current = 0;
     score = 0;
     shuffle(questions);
     loadQuestion();
-}
+    };
 function showResults() {
     showScreen("results");
     document.getElementById("resultText").textContent =
