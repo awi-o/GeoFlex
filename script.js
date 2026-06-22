@@ -101,6 +101,7 @@ function shuffle(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
+console.log("coisa");
 function startGame() {
     showScreen("start");
 }
@@ -111,6 +112,7 @@ document.getElementById("startGameBtn").onclick = () => {
     shuffle(questions);
     loadQuestion();
     };
+console.log("mais coisa");
 function showResults() {
     showScreen("results");
     document.getElementById("resultText").textContent =
