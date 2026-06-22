@@ -225,7 +225,7 @@ input {
     align-items: center;
     gap: 10px;
 }
-#startScreen {
+.startScreen {
     display: flex;
     flex-direction: column;
     align-items: center;
