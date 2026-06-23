@@ -1,5 +1,22 @@
-console.log("primeira coisa");
 // variaveis
+const percent = Math.round((score / questions.length) * 100);
+let rank = "";
+
+if (percent >= 90) {
+    rank = "👑 Mestre GeoFlex";
+}
+else if (percent >= 70) {
+    rank = "🗺️ Especialista";
+}
+else if (percent >= 50) {
+    rank = "🌎 Explorador";
+}
+else if (percent >= 30) {
+    rank = "📍 Aprendiz";
+}
+else {
+    rank = "🧭 Turista Perdido";
+}
 const questions = [
     { image: "assets/flags/brazil.png", answer: "Brasil" },
     { image: "assets/flags/france.png", answer: "França" },
@@ -116,10 +133,14 @@ console.log("mais coisa");
 function showResults() {
     showScreen("results");
     document.getElementById("resultText").textContent =
-        `✔ Acertos: ${score}/${questions.length}`;
+        `✔ Acertos: ${score}/${questions.length} (${percent}%)`;
+document.getElementById("rankDisplay").textContent = rank;
     document.getElementById("restartBtn").onclick = () => {
         startGame();
     };
+    document.getElementById("statsDisplay").textContent =
+`✔ Acertos: ${score} | ❌ Erros: ${questions.length - score}`;
+
     document.getElementById("menuBtn").onclick = () => {
         showScreen("menu");
     };
