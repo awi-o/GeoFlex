@@ -14,7 +14,7 @@ const questions = [
     { image: "assets/flags/uzbekistan.png", answer: "Uzbequistão" },
     { image: "assets/flags/england.png", answer: "Inglaterra" },
     { image: "assets/flags/ghana.png", answer: ["Gana", "Ghana"] },
-    { image: "assets/flags/panama.png", answer: ["Panamá" },
+    { image: "assets/flags/panama.png", answer: "Panamá" },
     { image: "assets/flags/croatia.png", answer: "Croatia" },
     { image: "assets/flags/colombia.png", answer: "Colômbia" },
     { image: "assets/flags/jordan.png", answer: "Jordânia" },
