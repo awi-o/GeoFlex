@@ -10,14 +10,14 @@ const questions = [
     { image: "assets/flags/uk.png", answer: "Reino Unido" },
     { image: "assets/flags/south-africa.png", answer: "África do Sul" },
     { image: "assets/flags/saudi-arabia.png", answer: "Arábia Saudita" },
-    { image: "assets/flags/tunisia.png", answer: "Tunísia" },
-    { image: "assets/flags/japan.png", answer: ["Japão", "Japan"] },
-    { image: "assets/flags/belgium.png", answer: "Bélgica" },
-    { image: "assets/flags/iran.png", answer: ["Irã", "Iran"] },
-    { image: "assets/flags/uruguay.png", answer: ["Uruguai", "Uruguay"] },
-    { image: "assets/flags/cape-verde.png", answer: "Cabo Verde" },
-    { image: "assets/flags/new-zealand.png", answer: "Nova Zelândia" },
-    { image: "assets/flags/egypt.png", answer: "Egito" },
+    { image: "assets/flags/portugal.png", answer: "Portugal" },
+    { image: "assets/flags/uzbekistan.png", answer: "Uzbequistão" },
+    { image: "assets/flags/england.png", answer: "Inglaterra" },
+    { image: "assets/flags/ghana.png", answer: ["Gana", "Ghana"] },
+    { image: "assets/flags/panama.png", answer: ["Panamá" },
+    { image: "assets/flags/croatia.png", answer: "Croatia" },
+    { image: "assets/flags/colombia.png", answer: "Colômbia" },
+    { image: "assets/flags/dr-congo.png", answer: ["RD Congo", "DR Congo", "Congo RD", "Congo DR", "Congo Democrático", "República Democrática do Congo"] },
 ];
 const soundCorrect = new Audio("sounds/default-corr.mp3");
 const soundWrong = new Audio("sounds/wrong.mp3");
