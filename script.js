@@ -29,7 +29,7 @@ let locked = false;
 
 //🧭 single page sistema
 const screens = {
-    start: document.querySelector(".startScreen").
+    start: document.querySelector(".startScreen"),
     menu: document.querySelector(".buttons"),
     gameMenu: document.querySelector(".game-menu"),
     game: document.querySelector(".game-screen"),
