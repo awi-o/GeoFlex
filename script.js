@@ -17,7 +17,9 @@ const questions = [
     { image: "assets/flags/panama.png", answer: ["Panamá" },
     { image: "assets/flags/croatia.png", answer: "Croatia" },
     { image: "assets/flags/colombia.png", answer: "Colômbia" },
-    { image: "assets/flags/dr-congo.png", answer: ["RD Congo", "DR Congo", "Congo RD", "Congo DR", "Congo Democrático", "República Democrática do Congo"] },
+    { image: "assets/flags/jordan.png", answer: "Jordânia" },
+    { image: "assets/flags/argelia.png", answer: "Argélia" },
+    { image: "assets/flags/dr-congo.png", answer: ["RD Congo", "DR Congo", "Congo RD", "Congo DR", "Congo Democrático", "República Democrática do Congo"] }
 ];
 const soundCorrect = new Audio("sounds/default-corr.mp3");
 const soundWrong = new Audio("sounds/wrong.mp3");
