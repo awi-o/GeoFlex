@@ -111,7 +111,7 @@ document.getElementById("startGameBtn").onclick = () => {
     current = 0;
     score = 0;
     shuffle(questions);
-    loadQuestion();
+    requestAnimationFrame(() => loadQuestion());
     };
 console.log("mais coisa");
 function showResults() {
