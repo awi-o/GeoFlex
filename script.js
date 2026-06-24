@@ -162,7 +162,7 @@ document.getElementById("submitBtn").addEventListener("click", () => {
 document.getElementById("qskipBtn").addEventListener("click", () => { // botão de pular pergunta
     if (locked) return;
     if (skips <= maxskips) {
-    if (current === questions.length - 1) {
+    if (current < questions.length - 1) {
         current++;
         loadQuestion();
         skips -= 1;
@@ -178,6 +178,9 @@ document.getElementById("qskipBtn").addEventListener("click", () => { // botão 
         ? correct.some(answer => normalize(input) === normalize(answer))
         : normalize(input) === normalize(correct)) {
         score++;
+        if (skips < maxskips) {
+            skips += 1;
+        }
         document.getElementById("feedback").textContent = "✔ Certo!";
         soundCorrect.play();
         
