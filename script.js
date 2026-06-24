@@ -218,6 +218,16 @@ document.getElementById("answerInput").addEventListener("keydown", (event) => {
         document.getElementById("submitBtn").click();
     }
 });
+document.getElementById("restartGameBtn").addEventListener("click", () => {
+    current = 0;
+    score = 0;
+    skips = 1;
+    locked = false;
+
+    shuffle(questions);
+    showScreen("game");
+    loadQuestion();
+});
 document.getElementById("playGameBtn").addEventListener("click", () => {
     document.querySelector(".game-menu").style.display = "none";
     startGame();
