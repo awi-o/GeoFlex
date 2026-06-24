@@ -161,7 +161,7 @@ document.getElementById("qskipBtn").addEventListener("click", () => { // botão 
     } else {
         showResults();
     }
-}
+});
                                                      
     if (Array.isArray(correct)
         ? correct.some(answer => normalize(input) === normalize(answer))
