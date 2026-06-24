@@ -155,9 +155,12 @@ document.getElementById("submitBtn").addEventListener("click", () => {
     locked = true;
     const input = document.getElementById("answerInput").value;
     const correct = questions[current].answer;
+
 document.getElementById("qskipBtn").addEventListener("click", () => { // botão de pular pergunta
+    if (locked) return;
     if (current < questions.length) {
         current++;
+        loadQuestion();
     } else {
         showResults();
     }
