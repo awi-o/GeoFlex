@@ -92,7 +92,8 @@ function normalize(text) {
 function loadQuestion() {
     const q = questions[current];
     document.getElementById("questionCounter").textContent =
-    `Pergunta ${current + 1}/${questions.length} <br> Skips: ${skips}/${maxskips}`;
+    `Pergunta ${current + 1}/${questions.length}`;
+    document.getElementById("skipCounter").textContent = `Skips: ${skips}/${maxskips}`;
     document.getElementById("flagImg").src = q.image;
     document.getElementById("answerInput").value = "";
     document.getElementById("feedback").textContent = "";
