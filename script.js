@@ -10,16 +10,15 @@ const questions = [
     { image: "assets/flags/uk.png", answer: "Reino Unido" },
     { image: "assets/flags/south-africa.png", answer: "África do Sul" },
     { image: "assets/flags/saudi-arabia.png", answer: "Arábia Saudita" },
-    { image: "assets/flags/portugal.png", answer: "Portugal" },
-    { image: "assets/flags/uzbekistan.png", answer: "Uzbequistão" },
-    { image: "assets/flags/england.png", answer: "Inglaterra" },
-    { image: "assets/flags/ghana.png", answer: ["Gana", "Ghana"] },
-    { image: "assets/flags/panama.png", answer: "Panamá" },
-    { image: "assets/flags/croatia.png", answer: "Croácia" },
-    { image: "assets/flags/colombia.png", answer: "Colômbia" },
-    { image: "assets/flags/jordan.png", answer: "Jordânia" },
-    { image: "assets/flags/argelia.png", answer: "Argélia" },
-    { image: "assets/flags/dr-congo.png", answer: ["RD Congo", "DR Congo", "Congo RD", "Congo DR", "Congo Democrático", "República Democrática do Congo"] }
+    { image: "assets/flags/switzerl.png", answer: "Suíça" },
+    { image: "assets/flags/canada.png", answer: "Canadá" },
+    { image: "assets/flags/bosnia.png", answer: ["Bósnia e Herzegovina", "Bósnia & Herzegovina", "Bósnia"] },
+    { image: "assets/flags/qatar.png", answer: ["Catar", "Qatar"] },
+    { image: "assets/flags/scotland.png", answer: "Escócia" },
+    { image: "assets/flags/morocco.png", answer: "Marrocos" },
+    { image: "assets/flags/czechia.png", answer: ["República Tcheca", "República Tchéquia", "Tchéquia", "Tcheca"] },
+    { image: "assets/flags/mexico.png", answer: "México" },
+    { image: "assets/flags/south-korea.png", answer: ["Coréia do Sul", "Coréia"] }
 ];
 const soundCorrect = new Audio("sounds/default-corr.mp3");
 const soundWrong = new Audio("sounds/wrong.mp3");
