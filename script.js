@@ -158,22 +158,6 @@ document.getElementById("submitBtn").addEventListener("click", () => {
     locked = true;
     const input = document.getElementById("answerInput").value;
     const correct = questions[current].answer;
-
-document.getElementById("qskipBtn").addEventListener("click", () => { // botão de pular pergunta
-    if (locked) return;
-    if (skips <= maxskips) {
-    if (current < questions.length - 1) {
-        current++;
-        loadQuestion();
-        skips -= 1;
-    } else {
-        showResults();
-    }
-} else {
-        alert("voce não tem skips restantes☹");
-    }
-});
-                                                     
     if (Array.isArray(correct)
         ? correct.some(answer => normalize(input) === normalize(answer))
         : normalize(input) === normalize(correct)) {
@@ -212,6 +196,20 @@ document.getElementById("qskipBtn").addEventListener("click", () => { // botão 
     setTimeout(() => {
     flagImg.classList.remove("flash-correct", "flash-wrong");
 }, 150);
+});
+document.getElementById("qskipBtn").addEventListener("click", () => { // botão de pular pergunta
+    if (locked) return;
+    if (skips <= maxskips) {
+    if (current < questions.length - 1) {
+        current++;
+        loadQuestion();
+        skips -= 1;
+    } else {
+        showResults();
+    }
+} else {
+        alert("voce não tem skips restantes☹");
+    }
 });
 document.getElementById("answerInput").addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
