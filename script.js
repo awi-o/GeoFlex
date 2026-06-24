@@ -199,7 +199,7 @@ document.getElementById("submitBtn").addEventListener("click", () => {
 });
 document.getElementById("qskipBtn").addEventListener("click", () => { // botão de pular pergunta
     if (locked) return;
-    if (skips <= maxskips) {
+    if (skips !== 0) {
     if (current < questions.length - 1) {
         current++;
         loadQuestion();
