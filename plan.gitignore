@@ -1,0 +1,31 @@
+0.7 - Mensagem de desempenho no final do jogo 
+- mensagem baseada no desempenho:
+0–30%: “tenta de novo”
+30–70%: “bom!”
+70–100%: “GG”
+- saves locais
+
+0.8 - 🎨  UI polish
+hover mais suave nos botões
+animação leve no menu
+padding/spacing mais consistente
+sombra leve na logo e cards
+
+0.9 - ⏳ Tempo & Som
+quando começa o quiz, conta o tempo
+sistema simples de som (on/off)
+jogo em inglês
+
+1.0- 🎮 THE GRAND UPDATE
+- mais jogos
+- configurações funcionando
+- tradução
+- score adicionado
+- recorde de tempo
+- modos de jogo (fácil, médio, difícil, impossível)
+- modo escrito ou de alternativa
+- mais questões
+
+1.1- 🎯 Polish update
+- vc pode escolher os sons que tocam
+- MUITAS correções de bugs (se tiver)
