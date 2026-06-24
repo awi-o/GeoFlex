@@ -24,6 +24,8 @@ const questions = [
 const soundCorrect = new Audio("sounds/default-corr.mp3");
 const soundWrong = new Audio("sounds/wrong.mp3");
 const soundWin = new Audio("sounds/win.mp3");
+const maxskips = 3;
+let skips = 1;
 let current = 0;
 let score = 0;
 let locked = false;
@@ -90,7 +92,7 @@ function normalize(text) {
 function loadQuestion() {
     const q = questions[current];
     document.getElementById("questionCounter").textContent =
-    `Pergunta ${current + 1}/${questions.length}`;
+    `Pergunta ${current + 1}/${questions.length} <br> Skips: ${skips}/${maxskips}`;
     document.getElementById("flagImg").src = q.image;
     document.getElementById("answerInput").value = "";
     document.getElementById("feedback").textContent = "";
@@ -105,6 +107,7 @@ function shuffle(array) {
 }
 function startGame() {
     showScreen("start");
+    skips = 1;
 }
 document.getElementById("startGameBtn").onclick = () => {
     showScreen("game");
@@ -158,11 +161,16 @@ document.getElementById("submitBtn").addEventListener("click", () => {
 
 document.getElementById("qskipBtn").addEventListener("click", () => { // botão de pular pergunta
     if (locked) return;
+    if (skips <= maxskips) {
     if (current === questions.length - 1) {
         current++;
         loadQuestion();
+        skips -= 1;
     } else {
         showResults();
+    }
+} else {
+        alert("voce não tem skips restantes☹");
     }
 });
                                                      
