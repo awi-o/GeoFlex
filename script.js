@@ -94,7 +94,7 @@ function loadQuestion() {
     document.getElementById("flagImg").src = q.image;
     document.getElementById("answerInput").value = "";
     document.getElementById("feedback").textContent = "";
-    document.getElementById("answerInput").focus();
+    document.getElementById("answerInput").focus()
 }
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -155,7 +155,14 @@ document.getElementById("submitBtn").addEventListener("click", () => {
     locked = true;
     const input = document.getElementById("answerInput").value;
     const correct = questions[current].answer;
-
+document.getElementById("qskipBtn").addEventListener("click", () => { // botão de pular pergunta
+    if (current < questions.length) {
+        current++;
+    } else {
+        showResults();
+    }
+}
+                                                     
     if (Array.isArray(correct)
         ? correct.some(answer => normalize(input) === normalize(answer))
         : normalize(input) === normalize(correct)) {
