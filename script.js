@@ -9,16 +9,19 @@ const questions = [
     { image: "assets/flags/chile.png", answer: "Chile" },
     { image: "assets/flags/uk.png", answer: "Reino Unido" },
     { image: "assets/flags/south-africa.png", answer: "África do Sul" },
-    { image: "assets/flags/saudi-arabia.png", answer: "Arábia Saudita" },
-    { image: "assets/flags/switzerl.png", answer: "Suíça" },
-    { image: "assets/flags/canada.png", answer: "Canadá" },
-    { image: "assets/flags/bosnia.png", answer: ["Bósnia e Herzegovina", "Bósnia & Herzegovina", "Bósnia"] },
-    { image: "assets/flags/qatar.png", answer: ["Catar", "Qatar"] },
-    { image: "assets/flags/scotland.png", answer: "Escócia" },
-    { image: "assets/flags/morocco.png", answer: "Marrocos" },
-    { image: "assets/flags/czechia.png", answer: ["República Tcheca", "República Tchéquia", "Tchéquia", "Tcheca"] },
-    { image: "assets/flags/mexico.png", answer: "México" },
-    { image: "assets/flags/south-korea.png", answer: ["Coréia do Sul", "Coréia"] }
+    { image: "assets/flags/saudi-arabia.png", answer: ["Arábia Saudita" },
+    { image: "assets/flags/belgium.png", answer: "Bélgica" },
+    { image: "assets/flags/egypt.png", answer: "Egito" },
+    { image: "assets/flags/new-zealand.png", answer: "Nova Zelândia" },
+    { image: "assets/flags/iran.png", answer: "Irã" },
+    { image: "assets/flags/curacao.png", answer: "Curaçao" },
+    { image: "assets/flags/ivory-coast.png", answer: "Costa do Marfim" },
+    { image: "assets/flags/ecuador.png", answer: "Equador" },
+    { image: "assets/flags/germany.png", answer: "Alemanha" },
+    { image: "assets/flags/japan.png", answer: "Japão" },
+    { image: "assets/flags/sweden.png", answer: "Suécia" },
+    { image: "assets/flags/tunisia.png", answer: "Tunísia" },
+    { image: "assets/flags/netherlands.png", answer: ["Holanda", "Países Baixos"] }
 ];
 const soundCorrect = new Audio("sounds/default-corr.mp3");
 const soundWrong = new Audio("sounds/wrong.mp3");
@@ -29,6 +32,39 @@ let current = 0;
 let score = 0;
 let locked = false;
 
+function levenshtein(a, b) {
+    a = normalize(a);
+    b = normalize(b);
+
+    const matrix = [];
+
+    for (let i = 0; i <= b.length; i++) {
+        matrix[i] = [i];
+    }
+
+    for (let j = 0; j <= a.length; j++) {
+        matrix[0][j] = j;
+    }
+
+    for (let i = 1; i <= b.length; i++) {
+        for (let j = 1; j <= a.length; j++) {
+            if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(
+                    matrix[i - 1][j - 1] + 1,
+                    matrix[i][j - 1] + 1,
+                    matrix[i - 1][j] + 1
+                );
+            }
+        }
+    }
+
+    const distance = matrix[b.length][a.length];
+    const maxLen = Math.max(a.length, b.length);
+
+    return 1 - distance / maxLen;
+}
 //🧭 single page sistema
 const screens = {
     start: document.querySelector(".startScreen"),
@@ -158,17 +194,19 @@ document.getElementById("submitBtn").addEventListener("click", () => {
     locked = true;
     const input = document.getElementById("answerInput").value;
     const correct = questions[current].answer;
-    if (Array.isArray(correct)
-        ? correct.some(answer => normalize(input) === normalize(answer))
-        : normalize(input) === normalize(correct)) {
+    if (
+    Array.isArray(correct)
+        ? correct.some(answer => levenshtein(input, answer) >= 0.8)
+        : levenshtein(input, correct) >= 0.8) {
         score++;
-        if (skips < maxskips) {
-            skips += 1;
-        }
-        document.getElementById("feedback").textContent = "✔ Certo!";
-        soundCorrect.play();
-        
-    } else {
+
+    if (skips < maxskips) {
+        skips += 1;
+    }
+
+    document.getElementById("feedback").textContent = "✔ Certo!";
+    soundCorrect.play();
+} else {
         document.getElementById("feedback").textContent = "❌ Errado! Era: " + (Array.isArray(correct) ? correct[0] : correct);
         soundWrong.play();
     }
