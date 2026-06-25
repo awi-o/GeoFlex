@@ -23,6 +23,8 @@ const questions = [
     { image: "assets/flags/tunisia.png", answer: "Tunísia" },
     { image: "assets/flags/netherlands.png", answer: ["Holanda", "Países Baixos"] }
 ];
+const logo = document.querySelector(".logo");
+const menu = document.querySelector(".menu");
 const soundCorrect = new Audio("sounds/default-corr.mp3");
 const soundWrong = new Audio("sounds/wrong.mp3");
 const soundWin = new Audio("sounds/win.mp3");
@@ -81,20 +83,19 @@ const screens = {
 };
 
 function showScreen(screen) {
-    // esconde tudo
     Object.values(screens).forEach(s => {
         if (s) s.style.display = "none";
     });
-
-    // mostra só a tela pedida
     if (screens[screen]) {
         screens[screen].style.display = "flex";
     }
 
     if (screen === "menu") {
-        document.querySelector(".logo").style.display = "block";
+        logo.style.display = "block";
+        menu.classList.add("open");
     } else {
-        document.querySelector(".logo").style.display = "none";
+        logo.style.display = "none";
+        menu.classList.remove("open");
     }
 }
 // ⚙️ configs
