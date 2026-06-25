@@ -269,6 +269,13 @@ document.getElementById("restartGameBtn").addEventListener("click", () => {
     showScreen("game");
     loadQuestion();
 });
+document.getElementById("exitGameBtn").addEventListener("click", () => {
+    current = 0;
+    score = 0;
+    skips = 1;
+    locked = false;
+    showScreen("gameMenu");
+});
 document.getElementById("playGameBtn").addEventListener("click", () => {
     document.querySelector(".game-menu").style.display = "none";
     startGame();
