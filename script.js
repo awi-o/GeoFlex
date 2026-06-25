@@ -32,6 +32,9 @@ let current = 0;
 let score = 0;
 let locked = false;
 
+function toggleMenu() {
+    document.querySelector(".menu").classList.toggle("open");
+}
 function levenshtein(a, b) {
     a = normalize(a);
     b = normalize(b);
