@@ -73,7 +73,7 @@ function levenshtein(a, b) { // ============================== IDENTIFICA TYPOS 
 //============================== 🧭SPA ==============================
 const screens = {
     start: document.querySelector(".startScreen"),
-    menu: document.querySelector(".buttons"),
+    menu: document.querySelector(".menu"),
     gameMenu: document.querySelector(".game-menu"),
     game: document.querySelector(".game-screen"),
     credits: document.querySelector(".credits"),
@@ -91,11 +91,9 @@ function showScreen(screen) {
     }
 
     if (screen === "menu") {
-        logo.style.display = "block";
-        menu.classList.add("open");
+        document.querySelector(".logo").style.display = "block";
     } else {
-        logo.style.display = "none";
-        menu.classList.remove("open");
+        document.querySelector(".logo").style.display = "none";
     }
 }
 // ⚙️ configs
