@@ -161,16 +161,16 @@ if (percent >= 90) {
     rank = "👑 Mestre GeoFlex";
 }
 else if (percent >= 70) {
-    rank = "🗺️ Especialista";
+    rank = "🗺️ Especialista - GG";
 }
 else if (percent >= 50) {
-    rank = "🌎 Explorador";
+    rank = "🌎 Explorador - Boaa";
 }
 else if (percent >= 30) {
-    rank = "📍 Aprendiz";
+    rank = "📍 Aprendiz - Você consegue fazer melhor";
 }
 else {
-    rank = "🧭 Turista Perdido";
+    rank = "🧭 Turista Perdido - Tenta de novo!";
 }
     showScreen("results");
     document.getElementById("resultText").textContent =
