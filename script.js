@@ -1,4 +1,4 @@
-// variaveis
+// ============================== VARIÁVEIS ==============================
 const questions = [
     { image: "assets/flags/brazil.png", answer: "Brasil" },
     { image: "assets/flags/france.png", answer: "França" },
@@ -33,11 +33,11 @@ let skips = 1;
 let current = 0;
 let score = 0;
 let locked = false;
-
+// ============================== FUNÇÕES ==============================
 function toggleMenu() {
     document.querySelector(".menu").classList.toggle("open");
 }
-function levenshtein(a, b) {
+function levenshtein(a, b) { // ============================== IDENTIFICA TYPOS ==============================
     a = normalize(a);
     b = normalize(b);
 
@@ -70,7 +70,7 @@ function levenshtein(a, b) {
 
     return 1 - distance / maxLen;
 }
-//🧭 single page sistema
+//============================== 🧭SPA ==============================
 const screens = {
     start: document.querySelector(".startScreen"),
     menu: document.querySelector(".buttons"),
@@ -83,11 +83,11 @@ const screens = {
 };
 
 function showScreen(screen) {
-    Object.values(screens).forEach(s => {
+    Object.values(screens).forEach(s => { // esconde todas as outras telas
         if (s) s.style.display = "none";
     });
     if (screens[screen]) {
-        screens[screen].style.display = "flex";
+        screens[screen].style.display = "flex"; // mostra só a tela pedida
     }
 
     if (screen === "menu") {
