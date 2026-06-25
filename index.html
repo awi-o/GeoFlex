@@ -33,21 +33,22 @@
     	    <button id="submitBtn">Confirmar</button>
 		    <button id="qskipBtn">Pular pergunta</button>
 			<button id="restartGameBtn">Reiniciar jogo</button>
+			<button id="exitGameBtn">Sair do jogo</button>
     	    <p id="feedback"></p>
 	</div>
 
         <div class="credits" style="display:none;">
     	    <h1>GeoFlex</h1>
     	    <p>Criado por Awi</p>
-
+			<br>
     	    <p>Alguns direitos reservados - 2026</p>
-
+			<br>
     	    <p>Só avisando que por favor dê aviso prévio se for remixar ou distribuir o jogo, e</p>
     	    <p>eu não permito copiar o jogo com más intenções.😉</p>
-
+			<br>
     	    <h2>Sobre o criador</h2>
     	    <p>Eu sou brasileiro e meu nome real não é awi, mas você pode me chamar assim</p>
-	    <p>Comecei a desenvolver esse jogo dia 17/06/2026 mais ou menos umas 15:32:48 da tarde</p>
+	    	<p>Comecei a desenvolver esse jogo dia 17/06/2026 mais ou menos umas 15:32:48 da tarde</p>
     	    <br>
     	    <button id="backCredits">Voltar</button>
 	</div>
@@ -59,7 +60,7 @@
     	    <p>Idioma: Português</p>
 
     	    <br>
-    	    <button id="backSettings">Voltar</button>
+    	    <button id="backSettings" onclick="toggleMenu()">Voltar</button>
 	</div>
 	
 	<div class="changelog" style="display:none;">
@@ -123,7 +124,7 @@
 		<p>2026-06-25 10:51 UTC-3 - GeoFlex v0.7.0</p>
 		<p>•Adicionado sistema de levenshtein (aceita erros pequenos na resposta do quiz, exemplo: Luxembugo)</p>
 		<p>•Adição dos países: Turquia, EUA, Paraguai, Austrália, Holanda, Japão, Suécia, Tunísia, Alemanha, Costa do Marfim, Curaçao e Equador exclusivamente <br> hoje em referencia os jogos da copa de hoje</p>
-		<button id="backChangelog">Voltar</button>
+		<button id="backChangelog" onclick="toggleMenu()">Voltar</button>
 	</div>
 
 	<div class="game-menu" style="display:none;">
@@ -154,7 +155,7 @@
     	</div>
 
     	<br>
-    	<button id="backMenuBtn">Voltar</button>
+    	<button id="backMenuBtn" onclick="toggleMenu()">Voltar</button>
 
 	</div>
 
@@ -166,7 +167,7 @@
 	<p id="statsDisplay"></p>
 		
     <button id="restartBtn">Jogar de novo</button>
-    <button id="menuBtn">Voltar ao menu</button>
+    <button id="menuBtn" onclick="toggleMenu()">Voltar ao menu</button>
 </div>
     <script src="script.js"></script>
 </body>
