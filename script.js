@@ -34,9 +34,6 @@ let current = 0;
 let score = 0;
 let locked = false;
 // ============================== FUNÇÕES ==============================
-function toggleMenu() {
-    document.querySelector(".menu").classList.toggle("open");
-}
 function levenshtein(a, b) { // ============================== IDENTIFICA TYPOS ==============================
     a = normalize(a);
     b = normalize(b);
@@ -73,7 +70,7 @@ function levenshtein(a, b) { // ============================== IDENTIFICA TYPOS 
 //============================== 🧭SPA ==============================
 const screens = {
     start: document.querySelector(".startScreen"),
-    menu: document.querySelector(".menu"),
+    menu: document.querySelector(".menu-screen"),
     gameMenu: document.querySelector(".game-menu"),
     game: document.querySelector(".game-screen"),
     credits: document.querySelector(".credits"),
