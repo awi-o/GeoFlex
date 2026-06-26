@@ -10,18 +10,11 @@ const questions = [
     { image: "assets/flags/uk.png", answer: "Reino Unido" },
     { image: "assets/flags/south-africa.png", answer: "África do Sul" },
     { image: "assets/flags/saudi-arabia.png", answer: "Arábia Saudita" },
-    { image: "assets/flags/paraguay.png", answer: "Paraguai" },
-    { image: "assets/flags/usa.png", answer: ["Estados Unidos", "EUA"] },
-    { image: "assets/flags/turkey.png", answer: "Turquia" },
-    { image: "assets/flags/australia.png", answer: "Austrália" },
-    { image: "assets/flags/curacao.png", answer: "Curaçao" },
-    { image: "assets/flags/ivory-coast.png", answer: "Costa do Marfim" },
-    { image: "assets/flags/ecuador.png", answer: "Equador" },
-    { image: "assets/flags/germany.png", answer: "Alemanha" },
-    { image: "assets/flags/japan.png", answer: "Japão" },
-    { image: "assets/flags/sweden.png", answer: "Suécia" },
-    { image: "assets/flags/tunisia.png", answer: "Tunísia" },
-    { image: "assets/flags/netherlands.png", answer: ["Holanda", "Países Baixos"] }
+    { image: "assets/flags/uruguay.png", answer: "Uruguai" },
+    { image: "assets/flags/cape-verde.png", answer: "Cabo verde" },
+    { image: "assets/flags/iraq.png", answer: "Iraque" },
+    { image: "assets/flags/norway.png", answer: "Noruega" },
+    { image: "assets/flags/senegal.png", answer: "Senegal" }
 ];
 const logo = document.querySelector(".logo");
 const menu = document.querySelector(".menu");
