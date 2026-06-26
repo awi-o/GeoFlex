@@ -8,7 +8,7 @@ const questions = [
     { image: "assets/flags/russia.png", answer: "Rússia" },
     { image: "assets/flags/chile.png", answer: "Chile" },
     { image: "assets/flags/uk.png", answer: "Reino Unido" },
-    { image: "assets/flags/south-africa.png", answer: "África do Sul" },
+    { image: "assets/flags/south-africa.png", answer: "África do Sul" },  
     { image: "assets/flags/saudi-arabia.png", answer: "Arábia Saudita" },
     { image: "assets/flags/uruguay.png", answer: "Uruguai" },
     { image: "assets/flags/cape-verde.png", answer: "Cabo verde" },
@@ -137,6 +137,7 @@ function startGame() {
     showScreen("start");
     skips = 1;
 }
+document.getElementById("troço").textContent = `Serão ${questions.length} perguntas`;
 document.getElementById("startGameBtn").onclick = () => {
     showScreen("game");
     current = 0;
