@@ -27,6 +27,12 @@ let current = 0;
 let score = 0;
 let locked = false;
 // ============================== FUNÇÕES ==============================
+function coisa() { 
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa eu to cansado disso");
+}
+if (score === 999) {
+    coisa();
+}
 function levenshtein(a, b) { // ============================== IDENTIFICA TYPOS ==============================
     a = normalize(a);
     b = normalize(b);
