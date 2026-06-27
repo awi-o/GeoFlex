@@ -10,11 +10,17 @@ const questions = [
     { image: "assets/flags/uk.png", answer: "Reino Unido" },
     { image: "assets/flags/south-africa.png", answer: "África do Sul" },  
     { image: "assets/flags/saudi-arabia.png", answer: "Arábia Saudita" },
-    { image: "assets/flags/uruguay.png", answer: "Uruguai" },
-    { image: "assets/flags/cape-verde.png", answer: "Cabo verde" },
-    { image: "assets/flags/iraq.png", answer: "Iraque" },
-    { image: "assets/flags/norway.png", answer: "Noruega" },
-    { image: "assets/flags/senegal.png", answer: "Senegal" }
+    { image: "assets/flags/austria.png", answer: "Áustria" },
+    { image: "assets/flags/jordan.png", answer: "Jordânia" },
+    { image: "assets/flags/argelia.png", answer: "Argélia" },
+    { image: "assets/flags/portugal.png", answer: "Portugal" },
+    { image: "assets/flags/dr-congo.png", answer: ["RD Congo", "DR Congo", "Congo RD", "Congo DR", "Congo Democrático", "República Democrática do Congo" },
+    { image: "assets/flags/colombia.png", answer: "Colômbia" },
+    { image: "assets/flags/panama.png", answer: "Panamá" },
+    { image: "assets/flags/england.png", answer: "Inglaterra" },
+    { image: "assets/flags/croatia.png", answer: "Croácia" },    
+    { image: "assets/flags/ghana.png", answer: "Gana" }, 
+    { image: "assets/flags/uzbekistan.png", answer: "Uzbequistão" }
 ];
 const logo = document.querySelector(".logo");
 const menu = document.querySelector(".menu");
