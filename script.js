@@ -198,10 +198,10 @@ document.getElementById("submitBtn").addEventListener("click", () => {
         ? correct.some(answer => levenshtein(input, answer) >= 0.8)
         : levenshtein(input, correct) >= 0.8) {
         score++;
-
-    if (skips < maxskips) {
-        skips += 1;
-    }
+        if (skips < maxskips) {
+            skips += 1;
+            document.getElementById("skipCounter").textContent = `Skips: ${skips}/${maxskips}`;
+        }
 
     document.getElementById("feedback").textContent = "✔ Certo!";
     soundCorrect.play();
